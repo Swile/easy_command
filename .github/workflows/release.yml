@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  checks: write
+  statuses: write
+  contents: write
+  packages: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: release please
+      id: release
+      uses: googleapis/release-please-action@v4
+
+    - name: clone repository
+      if: ${{ steps.release.outputs.releases_created == 'true' }}
+      uses: actions/checkout@v4
+
+    - name: setup ruby
+      if: ${{ steps.release.outputs.releases_created == 'true' }}
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: false
+
+    - name: Configure trusted publishing credentials
+      if: ${{ steps.release.outputs.releases_created == 'true' }}
+      uses: rubygems/configure-rubygems-credentials@v1.0.0
+
+    - name: build and publish to Github Package Registry
+      if: ${{ steps.release.outputs.releases_created == 'true' }}
+      run: |
+        gem build *.gemspec
+        gem push *.gem
