@@ -1,0 +1,5 @@
+# Feature team that owns the code (can be several teams when it is a shared asset)
+* @Swile/easy_command-maintainers
+
+# MUST BE THE LAST LINE IN THIS FILE - Team that is responsible and control CODEOWNERS file
+CODEOWNERS @Swile/easy_command-maintainers
