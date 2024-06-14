@@ -1,0 +1,34 @@
+# This is an ovverride of the usual style config at Swile this is in part
+# because the actual rubocop config from Swile is not publically referenceable
+# but also to allow for some flexibility in the maintenance and in eventual
+# external contributions.
+# Feel free to adapt or remove it as needed.
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/SingleLineBlockChain:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/BeEq:
+  Enabled: false
+RSpec/MessageExpectation:
+  Enabled: false
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+Style/BlockComments:
+  Enabled: false
+Style/BlockDelimiters:
+  AllowedPatterns:
+    - let
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+Style/SingleLineMethods:
+  Enabled: false
