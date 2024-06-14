@@ -1,0 +1,142 @@
+AllCops:
+  EnabledByDefault: true
+  SuggestExtensions: false
+  Exclude:
+    # This is not our code.
+    - bin/**/*
+
+# https://github.com/TheMenu/rubocop-config/issues/17
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+# https://github.com/TheMenu/rubocop-config/issues/2
+Layout/ClassStructure:
+  Enabled: false
+# To be able to copy paste multiple lines into a pry console.
+Layout/DotPosition:
+  EnforcedStyle: trailing
+# Because on a 2 lines method, we do not want to be forced to add a 3rd empty line.
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+# Disable rule for comments.
+Layout/LineLength:
+  AllowedPatterns: ['\A#']
+# Allow expressions on multiple lines even if they could fit on a single line.
+Layout/RedundantLineBreak:
+  Enabled: false
+# Having to prefix all classes by `::` is too much to avoid low probability clashes.
+Lint/ConstantResolution:
+  Enabled: false
+# Much less readable.
+Lint/NumberConversion:
+  Enabled: false
+Metrics/BlockLength:
+  # Describes block are more comments than real code blocks.
+  AllowedMethods: ['describe', 'context']
+  # Initializers are long, we know and we do not care.
+  Exclude:
+    - config/initializers/*
+# This cop checks if the length a method exceeds some maximum value.
+Metrics/MethodLength:
+  Max: 20
+# Memoized variables should not be accessed outside the method, and this should be explicit.
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+# Line alignment makes diffs bigger and harder to read.
+RSpec/AlignLeftLetBrace:
+  Enabled: false
+# Line alignment makes diffs bigger and harder to read.
+RSpec/AlignRightLetBrace:
+  Enabled: false
+# Consider extracting out some behaviour, e.g. with a `let` block, or a helper method.
+RSpec/ExampleLength:
+  Max: 15
+# `let!` variable referenced in an upper context is not detected, triggering many false positives.
+RSpec/LetSetup:
+  Enabled: false
+# Checks if examples contain too many `expect` calls.
+RSpec/MultipleExpectations:
+  Enabled: false
+# Nested contexts are considered bad. I might miss something, but I do not see why.
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+# Static checks do not describe classes.
+RSpec/DescribeClass:
+  Exclude:
+    - spec/static_checks/**/*
+    - spec/features/**/*
+# When a class as only one public method, we want the same file name as the class but the method described.
+RSpec/FilePath:
+  Enabled: false
+# Nesting allow clear context separation. I prefer nesting to listing. This can be debated.
+RSpec/NestedGroups:
+  Max: 5
+# https://github.com/TheMenu/rubocop-config/issues/10
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+# https://github.com/TheMenu/rubocop-config/issues/9
+Style/ConstantVisibility:
+  Enabled: false
+# We are not nazi robots, we want the flexibility to locally disable some rules.
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+# Ruby is self documented when correctly named.
+Style/Documentation:
+  Enabled: false
+# Ruby is self documented when correctly named.
+Style/DocumentationMethod:
+  Enabled: false
+# Everything is Swile copyrighted.
+Style/Copyright:
+  Enabled: false
+# Because return unless with negative are not necessarily more readable than an if.
+Style/GuardClause:
+  Enabled: false
+# In many occasions, adding an error class adds noise.
+Style/ImplicitRuntimeError:
+  Enabled: false
+# Because sometimes, we do not want to break a block for a comment.
+Style/InlineComment:
+  Enabled: false
+Style/IpAddresses:
+  Exclude:
+    - spec/**/*
+# Parenthesis are more readable for non ruby seniors.
+Style/MethodCallWithArgsParentheses:
+  AllowedMethods:
+    - gem
+    - require
+    - require_relative
+    - exit
+    - puts
+    - raise
+    # gemspec
+    - add_dependency
+    - add_development_dependency
+    # rspec
+    - to
+    - not_to
+    - describe
+    - it
+    - be
+    - context
+    - before
+    - after
+
+# We do not want to explicit all nil else.
+Style/MissingElse:
+  Enabled: false
+# Sometime we need hashes with string keys.
+Style/StringHashKeys:
+  Enabled: false
+# https://github.com/TheMenu/rubocop-config/issues/14
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+# Reduce diff size.
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+# Reduce diff size.
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+# Reduce diff size.
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
