@@ -1,0 +1,56 @@
+# .github/workflows/ci.yaml
+name: ci
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  contents: read
+  packages: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        ruby: ['2.7', '3.0', '3.1', '3.2', '3.3']
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+
+      - run: bundle install --jobs 4
+
+      - run: |
+            bundle exec rubocop
+
+      - run: |
+            bundle exec rspec
+  check_future_compatibility:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: head
+          bundler-cache: true
+
+      - run: bundle install --jobs 4
+
+      - run: |
+            bundle exec rubocop
+            bundle exec rspec

@@ -1,0 +1,10 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "ruby",
+      "extra-files": [
+        "easy_command.gemspec"
+      ]
+    }
+  }
+}
