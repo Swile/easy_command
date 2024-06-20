@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Swile/easy_command/compare/v1.0.0...v1.0.1) (2024-06-20)
+
+
+### Bug Fixes
+
+* Refresh Table of Contents ([a900407](https://github.com/Swile/easy_command/commit/a900407aee1884f80766d166a2d8ad5efc94cc28))
+
 ## [1.0.0](https://github.com/Swile/easy_command/compare/v1.0.0-rc3...v1.0.0) (2024-06-20)
 
 
