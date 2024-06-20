@@ -62,7 +62,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install command
+    $ gem install easy_command
 
 # Contributing
 
@@ -79,7 +79,7 @@ Please note that we are using auto release.
 
 Gem publishing and releasing is now automated with [google-release-please](https://github.com/googleapis/release-please).
 
-Workflow's configuration can be found in `.github/workflows/release.yml`
+The exact configuration of the workflow can be found in `.github/workflows/release.yml`
 
 # Usage
 
@@ -734,3 +734,18 @@ context "when called in a controller" do
 end
 
 ```
+
+# Using as `Command`
+
+`EasyCommand` used to be called `Command`. While this was no issue for a private library, it could not stay named that
+way as a public gem. For ease of use and to help smoother transitions, we provide another require entrypoint for the
+library:
+```ruby
+  gem 'easy_command', require: 'easy_command/as_command'
+```
+Requiring `easy_command/as_command` defines a `Command` alias that should provide the same functionality as when the gem was named as such.
+
+**⚠️ This overwrites the toplevel `Command` constant - be sure to use it safely.**
+
+**Also: do remember that any other `require`s should still be updated to `easy_command` though.**
+For example `require 'easy_command/spec_helpers'`.
