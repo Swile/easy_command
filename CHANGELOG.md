@@ -2,6 +2,17 @@
 
 # Historical releases
 
+## [1.0.0-rc1](https://github.com/Swile/easy_command/compare/v0.7.0...v1.0.0-rc1) (2024-06-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* Migrate app from private TheMenu/command to public Swile/easy_command
+
+### Features
+
+* Migrate app from private TheMenu/command to public Swile/easy_command ([229db93](https://github.com/Swile/easy_command/commit/229db93458d25b5cdef1146af3c7d5bae670c507))
+
 ## [0.7.0](https://github.com/TheMenu/command/compare/v0.6.0...v0.7.0) (2024-06-14)
 
 
