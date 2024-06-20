@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.0](https://github.com/Swile/easy_command/compare/v1.0.0-rc3...v1.0.0) (2024-06-20)
+
+
+### Features
+
+* Official 1.0 release ([f6efbf9](https://github.com/Swile/easy_command/commit/f6efbf937f903b5e1febfe7955997b6c669d33ca))
+* Update README with attribution in view of official release ([4891f17](https://github.com/Swile/easy_command/commit/4891f176c1a2ef81848c5aad2ac24275a48080d5))
+
 ## [1.0.0-rc3](https://github.com/Swile/easy_command/compare/v1.0.0-rc2...v1.0.0-rc3) (2024-06-20)
 
 
