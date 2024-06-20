@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-rc2](https://github.com/Swile/easy_command/compare/v1.0.0-rc1...v1.0.0-rc2) (2024-06-20)
+
+
+### Features
+
+* Add smooth transition helper file ([31f01b8](https://github.com/Swile/easy_command/commit/31f01b80554b5d36552f86c732a6119f720db0f1))
+
 ## [1.0.0-rc1](https://github.com/Swile/easy_command/compare/v0.7.0...v1.0.0-rc1) (2024-06-20)
 
 
