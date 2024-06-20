@@ -5,42 +5,38 @@ A simple, standardized way to build and use _Service Objects_ in Ruby.
 Table of Contents
 =================
 
-- [EasyCommand](#easycommand)
-- [Table of Contents](#table-of-contents)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Contributing](#contributing)
-- [Publication](#publication)
-  - [Automated](#automated)
-  - [Deprecated](#deprecated)
-    - [Config (ONCE)](#config-once)
-    - [Instructions](#instructions)
-- [Usage](#usage)
-  - [Returned objects](#returned-objects)
-  - [Subcommand](#subcommand)
-  - [Command chaining](#command-chaining)
-    - [Flow success callbacks](#flow-success-callbacks)
-  - [Merge errors from ActiveRecord instance](#merge-errors-from-activerecord-instance)
-  - [Stopping execution of the command](#stopping-execution-of-the-command)
-    - [abort](#abort)
-    - [assert](#assert)
-    - [ExitError](#exiterror)
-  - [Callback](#callback)
-    - [#on\_success](#on_success)
-  - [Error message](#error-message)
-    - [Default scope](#default-scope)
-    - [Example](#example)
-- [Test with Rspec](#test-with-rspec)
-  - [Mock](#mock)
-    - [Setup](#setup)
-    - [Usage](#usage-1)
-  - [Matchers](#matchers)
-    - [Setup](#setup-1)
-    - [Rails project](#rails-project)
-    - [Usage](#usage-2)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Contributing](#contributing)
+* [Publication](#publication)
+   * [Automated](#automated)
+* [Usage](#usage)
+   * [Returned objects](#returned-objects)
+   * [Subcommand](#subcommand)
+   * [Command chaining](#command-chaining)
+      * [Flow success callbacks](#flow-success-callbacks)
+   * [Merge errors from ActiveRecord instance](#merge-errors-from-activerecord-instance)
+   * [Stopping execution of the command](#stopping-execution-of-the-command)
+      * [abort](#abort)
+      * [assert](#assert)
+      * [ExitError](#exiterror)
+   * [Callback](#callback)
+      * [#on_success](#on_success)
+   * [Error message](#error-message)
+      * [Default scope](#default-scope)
+      * [Example](#example)
+* [Test with Rspec](#test-with-rspec)
+   * [Mock](#mock)
+      * [Setup](#setup)
+      * [Usage](#usage-1)
+   * [Matchers](#matchers)
+      * [Setup](#setup-1)
+      * [Rails project](#rails-project)
+      * [Usage](#usage-2)
+* [Using as Command](#using-as-command)
+* [Acknowledgements](#acknowledgements)
 
-
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
 
 # Requirements
 
@@ -769,4 +765,4 @@ We also thank all the contributors at Swile that took part in the internal devel
 - Julien Bouyoud
 - Didier Bernaudeau
 - Charles Duporge
-- D'alberto Pierre-Julien
+- Pierre-Julien D'alberto
