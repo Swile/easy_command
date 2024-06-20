@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-rc3](https://github.com/Swile/easy_command/compare/v1.0.0-rc2...v1.0.0-rc3) (2024-06-20)
+
+
+### Bug Fixes
+
+* Fix require ([903492c](https://github.com/Swile/easy_command/commit/903492cf9d493230ae96207c17373fe16052699b))
+
 ## [1.0.0-rc2](https://github.com/Swile/easy_command/compare/v1.0.0-rc1...v1.0.0-rc2) (2024-06-20)
 
 
