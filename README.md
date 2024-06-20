@@ -749,3 +749,24 @@ Requiring `easy_command/as_command` defines a `Command` alias that should provid
 
 **Also: do remember that any other `require`s should still be updated to `easy_command` though.**
 For example `require 'easy_command/spec_helpers'`.
+
+# Acknowledgements
+
+This gem is a fork of the [simple_command](https://github.com/nebulab/simple_command) gem. Thanks for their initial work.
+
+We also thank all the contributors at Swile that took part in the internal development of this gem:
+- Jérémie Bonal
+- Alexandre Lamandé
+- Champier Cyril
+- Dorian Coffinet
+- Guillaume Charneau
+- Matthew Nguyen
+- Benoît Barbe
+- Cédric Murer
+- Marine Sourin
+- Jean-Yves Rivallan
+- Houssem Eddine Bousselmi
+- Julien Bouyoud
+- Didier Bernaudeau
+- Charles Duporge
+- D'alberto Pierre-Julien
