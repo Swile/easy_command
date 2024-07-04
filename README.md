@@ -84,7 +84,7 @@ Here's a basic example of a command that check if a collection is empty or not
 ```ruby
 # define a command class
 class CollectionChecker
-  # put Command before the class' ancestors chain
+  # put EasyCommand before the class' ancestors chain
   prepend EasyCommand
 
   # mandatory: define a #call method. its return value will be available
@@ -537,8 +537,6 @@ en:
 ```
 
 ```ruby
-# config/locales/en.yml
-
 class CommandWithDefaultScope
   prepend EasyCommand
 
