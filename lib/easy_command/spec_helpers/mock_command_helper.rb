@@ -31,7 +31,7 @@ module EasyCommand
           klass = Object.const_get('FakeCommandErrors')
         else
           klass = Object.const_set 'FakeCommandErrors', Class.new
-          klass.prepend Command
+          klass.prepend EasyCommand
         end
         fake_command = klass.new
         if errors.any?
@@ -46,9 +46,9 @@ module EasyCommand
         allow(double).to receive(:errors).and_return(fake_command.errors)
         monad =
           if success
-            Command::Success.new(result)
+            EasyCommand::Success.new(result)
           else
-            Command::Failure.new(result).with_errors(fake_command.errors)
+            EasyCommand::Failure.new(result).with_errors(fake_command.errors)
           end
         allow(double).to receive(:call).and_return(monad)
         allow(double).to receive(:on_success).and_return(double)
