@@ -674,13 +674,14 @@ let(:mock) do
 end
 ```
 
-You can also add callbacks to your mock if you still need the result of your command :
+You can also add a code block to your mock that will be executed once your command is called during the rspec example :
 ```ruby
-let(:user)
+let(:user) { build(:user) }
+let(:other_model { create(:other_model) }
 let(:mock) do
   mock_successful_command(UserUpdater,
-    result: 10
-  ) { user.update!(first_name: John) }
+    result: user
+  ) { other_model.update!(foo: :bar) }
 ```
 
 ## Matchers
