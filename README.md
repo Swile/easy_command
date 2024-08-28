@@ -337,7 +337,7 @@ class UserCreator
   def call
     @user.save!
   rescue ActiveRecord::RecordInvalid
-    merge_errors_from_record(@user)
+    merge_errors_from(@user)
   end
 end
 
