@@ -5,36 +5,38 @@ A simple, standardized way to build and use _Service Objects_ in Ruby.
 Table of Contents
 =================
 
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Contributing](#contributing)
-* [Publication](#publication)
-   * [Automated](#automated)
-* [Usage](#usage)
-   * [Returned objects](#returned-objects)
-   * [Subcommand](#subcommand)
-   * [Command chaining](#command-chaining)
-      * [Flow success callbacks](#flow-success-callbacks)
-   * [Merge errors from ActiveRecord instance](#merge-errors-from-activerecord-instance)
-   * [Stopping execution of the command](#stopping-execution-of-the-command)
-      * [abort](#abort)
-      * [assert](#assert)
-      * [ExitError](#exiterror)
-   * [Callback](#callback)
-      * [#on_success](#on_success)
-   * [Error message](#error-message)
-      * [Default scope](#default-scope)
-      * [Example](#example)
-* [Test with Rspec](#test-with-rspec)
-   * [Mock](#mock)
-      * [Setup](#setup)
-      * [Usage](#usage-1)
-   * [Matchers](#matchers)
-      * [Setup](#setup-1)
-      * [Rails project](#rails-project)
-      * [Usage](#usage-2)
-* [Using as Command](#using-as-command)
-* [Acknowledgements](#acknowledgements)
+- [EasyCommand](#easycommand)
+- [Table of Contents](#table-of-contents)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [Publication](#publication)
+  - [Automated](#automated)
+- [Usage](#usage)
+  - [Returned objects](#returned-objects)
+  - [Subcommand](#subcommand)
+  - [Command chaining](#command-chaining)
+    - [Flow success callbacks](#flow-success-callbacks)
+  - [Merge errors from ActiveRecord instance](#merge-errors-from-activerecord-instance)
+  - [Stopping execution of the command](#stopping-execution-of-the-command)
+    - [abort](#abort)
+    - [assert](#assert)
+    - [ExitError](#exiterror)
+  - [Callback](#callback)
+    - [#on\_success](#on_success)
+  - [Error message](#error-message)
+    - [Default scope](#default-scope)
+    - [Example](#example)
+- [Test with Rspec](#test-with-rspec)
+  - [Mock](#mock)
+    - [Setup](#setup)
+    - [Usage](#usage-1)
+  - [Matchers](#matchers)
+    - [Setup](#setup-1)
+    - [Rails project](#rails-project)
+    - [Usage](#usage-2)
+- [Using as `Command`](#using-as-command)
+- [Acknowledgements](#acknowledgements)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
 
@@ -672,6 +674,15 @@ let(:mock) do
     result: 10
   )
 end
+```
+
+You can also add callbacks to your mock if you still need the result of your command :
+```ruby
+let(:user)
+let(:mock) do
+  mock_successful_command(UserUpdater,
+    result: 10
+  ) { user.update!(first_name: John) }
 ```
 
 ## Matchers

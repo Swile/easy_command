@@ -5,8 +5,8 @@ module EasyCommand
     module MockCommandHelper
       NO_PARAMS_PASSED = Object.new
 
-      def mock_successful_command(command, result:, params: NO_PARAMS_PASSED)
-        mock_command(command, success: true, result: result, params: params)
+      def mock_successful_command(command, result:, params: NO_PARAMS_PASSED, &block)
+        mock_command(command, success: true, result: result, params: params, &block)
       end
 
 =begin
@@ -22,11 +22,11 @@ module EasyCommand
         errors: {:entry=>[code: :not_found, message: "Couldn't find Entry with 'document_identifier'='foo'"]},
       )
 =end
-      def mock_unsuccessful_command(command, errors:, params: NO_PARAMS_PASSED)
-        mock_command(command, success: false, errors: detailed_errors(errors), params: params)
+      def mock_unsuccessful_command(command, errors:, params: NO_PARAMS_PASSED, &block)
+        mock_command(command, success: false, errors: detailed_errors(errors), params: params, &block)
       end
 
-      def mock_command(command, success:, result: nil, errors: {}, params: NO_PARAMS_PASSED)
+      def mock_command(command, success:, result: nil, errors: {}, params: NO_PARAMS_PASSED, &block)
         if Object.const_defined?('FakeCommandErrors')
           klass = Object.const_get('FakeCommandErrors')
         else
@@ -60,6 +60,7 @@ module EasyCommand
           allow(command).to receive(:call).with(*mock_params, **hash_params).and_return(monad)
           allow(command).to receive(:new).with(*mock_params, **hash_params).and_return(double)
         end
+        block.call if block_given?
         double
       end
 
