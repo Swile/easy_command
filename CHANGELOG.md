@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Swile/easy_command/compare/v1.0.1...v1.0.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* typo in method name ([#25](https://github.com/Swile/easy_command/issues/25)) ([608036c](https://github.com/Swile/easy_command/commit/608036c33ddc4ef7df88f8ca49e97aba4933792a))
+
 ## [1.0.1](https://github.com/Swile/easy_command/compare/v1.0.0...v1.0.1) (2024-08-07)
 
 
