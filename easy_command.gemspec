@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
 
   s.metadata['rubygems_mfa_required'] = 'true'
 
-  s.metadata["source_code_uri"] = "https://github.com/Swile/easy-command"
-  s.metadata["github_repo"] = "ssh://github.com/Swile/easy-command"
+  s.metadata["source_code_uri"] = "https://github.com/Swile/easy_command"
+  s.metadata["github_repo"] = "ssh://github.com/Swile/easy_command"
 
   s.files         = `git ls-files -z`.split("\x0")
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
