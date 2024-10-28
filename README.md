@@ -672,6 +672,16 @@ let(:mock) do
 end
 ```
 
+You can also add a code block to your mock that will be executed once your command is called during the rspec example :
+```ruby
+let(:user) { build(:user) }
+let(:other_model { create(:other_model) }
+let(:mock) do
+  mock_successful_command(UserUpdater,
+    result: user
+  ) { other_model.update!(foo: :bar) }
+```
+
 ## Matchers
 
 To simplify your life, the gem come with matchers.
